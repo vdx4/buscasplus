@@ -12,11 +12,6 @@ type Props = {
 export default async function WhatsappIndex({ searchParams }: Props) {
   const { plano, duracao, preco } = await searchParams;
 
-  // Opcional: trate parâmetros ausentes
-  if (!plano || !duracao || !preco) {
-    redirect('/erro'); // Ou mostre uma mensagem de erro
-  }
-
   redirect(
     gerarLinkWhatsapp(
       `Olá, tenho interesse no ${plano} de ${duracao} por R$${preco}`,

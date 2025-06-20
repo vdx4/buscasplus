@@ -41,7 +41,7 @@ export default function Home() {
         <div className="max-w-xs w-full mx-auto flex flex-col justify-start items-center">
           <Logo />
           <span className="mx-auto text-center text-muted-foreground text-sm">
-            Descubra o poder da informação com o InfoBuscas
+            Descubra o poder da informação com o BuscasPlus
           </span>
         </div>
       </div>

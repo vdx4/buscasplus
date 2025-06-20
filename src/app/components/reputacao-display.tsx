@@ -127,7 +127,7 @@ const ReviewCard = ({
   body: string;
   stars: number;
 }) => {
-  const maxStars = 5; // Número máximo de estrelas
+  const maxStars = 5;
 
   return (
     <figure
@@ -165,17 +165,19 @@ const ReviewCard = ({
         {body}
       </blockquote>
 
-      {/* Estrelas */}
-      <div className="mt-3 flex flex-row items-center gap-1">
-        {Array.from({ length: maxStars }, (_, index) => (
-          <Star
-            key={index}
-            fill={index < stars ? 'yellow' : 'none'} // Estrela preenchida ou vazia
-            className={index < stars ? 'text-yellow-400' : 'text-gray-400'}
-            size={20}
-          />
-        ))}
-        <span className="ml-1 text-sm">
+      {/* Estrelas - CORRIGIDO */}
+      <div className="mt-3 flex items-center gap-1">
+        <div className="flex items-center gap-0.5">
+          {Array.from({ length: maxStars }, (_, index) => (
+            <Star
+              key={index}
+              fill={index < stars ? '#fbbf24' : 'none'}
+              stroke={index < stars ? '#fbbf24' : '#9ca3af'}
+              className="h-4 w-4 flex-shrink-0"
+            />
+          ))}
+        </div>
+        <span className="ml-2 text-xs text-muted-foreground">
           {stars}/{maxStars}
         </span>
       </div>
