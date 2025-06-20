@@ -134,8 +134,7 @@ const ReviewCard = ({
       className={cn(
         'relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4',
         'border-border bg-card hover:bg-card/[.05]',
-        // Responsividade para mobile
-        'sm:w-64 w-72'
+        'sm:w-64 w-72',
       )}
     >
       {/* Header com foto, nome e avaliação */}
@@ -179,7 +178,6 @@ const ReviewCard = ({
     </figure>
   );
 };
-
 
 export function ReputacaoDisplay() {
   return (
