@@ -105,7 +105,7 @@ export function ModulosEnglobados() {
                 <span className="relative inline-flex rounded-full h-5 w-5 bg-sky-500"></span>
               </span>
             </div>
-          ) : null
+          ) : null,
         )}
       </div>
 
