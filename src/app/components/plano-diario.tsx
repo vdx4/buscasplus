@@ -1,18 +1,18 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import { planos } from "@/lib/planos";
-import { CheckCircle, EarthLock, Package, ShoppingCart } from "lucide-react";
-import { Button } from "@heroui/button";
+import { motion } from 'framer-motion';
+import { planos } from '@/lib/planos';
+import { CheckCircle, EarthLock, Package, ShoppingCart } from 'lucide-react';
+import { Button } from '@heroui/button';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import Link from "next/link";
-import { useInView } from "react-intersection-observer";
+} from '@/components/ui/select';
+import Link from 'next/link';
+import { useInView } from 'react-intersection-observer';
 
 export function PlanoDiario() {
   const { consultas, id, price, title, readable_id } = planos.diario;
@@ -30,14 +30,14 @@ export function PlanoDiario() {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
       exit={{ opacity: 0, y: -50 }}
-      transition={{ duration: 0.5, ease: "easeInOut" }}
+      transition={{ duration: 0.5, ease: 'easeInOut' }}
     >
       <motion.div
         key={id}
         className="bg-card rounded-xl p-4 flex flex-col gap-6 mx-auto w-full max-w-xs text-left"
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: inView ? 1 : 0.9, opacity: inView ? 1 : 0 }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
+        transition={{ duration: 0.4, ease: 'easeOut' }}
       >
         <p className="text-center font-semibold text-lg">{title}</p>
         <Select disabled defaultValue="diaria">
@@ -50,12 +50,12 @@ export function PlanoDiario() {
         </Select>
         <div className="flex flex-col gap-1">
           <span className="text-muted-foreground text-medium">
-            {readable_id === "premium_anual" ? "A partir de" : "Somente por"}
+            {readable_id === 'premium_anual' ? 'A partir de' : 'Somente por'}
           </span>
           <p className="font-semibold text-2xl">
-            {price.toLocaleString("pt-BR", {
-              style: "currency",
-              currency: "BRL",
+            {price.toLocaleString('pt-BR', {
+              style: 'currency',
+              currency: 'BRL',
             })}
           </p>
         </div>
@@ -67,8 +67,8 @@ export function PlanoDiario() {
             </div>
             <span className="font-light">
               <b className="font-bold">
-                {consultas !== null ? consultas : "Quantidade não especificada"}
-              </b>{" "}
+                {consultas !== null ? consultas : 'Quantidade não especificada'}
+              </b>{' '}
               consultas por dia por módulo
             </span>
           </div>

@@ -53,7 +53,10 @@ export function PlanoOuro() {
         transition={{ duration: 0.5, ease: 'easeOut' }}
       >
         <p className="text-center font-semibold text-lg">{title}</p>
-        <Select defaultValue={duracao[0].readable_id} onValueChange={handleChangeValue}>
+        <Select
+          defaultValue={duracao[0].readable_id}
+          onValueChange={handleChangeValue}
+        >
           <SelectTrigger className="w-full">
             <SelectValue placeholder="Selecione a duração" />
           </SelectTrigger>
@@ -66,9 +69,7 @@ export function PlanoOuro() {
           </SelectContent>
         </Select>
         <div className="flex flex-col gap-1">
-          <span className="text-muted-foreground text-medium">
-            Somente por
-          </span>
+          <span className="text-muted-foreground text-medium">Somente por</span>
           <div className="flex flex-row items-center gap-2">
             <p className="font-bold text-2xl">
               {selected.price.toLocaleString('pt-BR', {
@@ -93,7 +94,8 @@ export function PlanoOuro() {
               <Package size={20} className="text-primary" />
             </div>
             <span className="font-light">
-              Todos módulos <b className="font-bold">básicos</b> e <b className="font-bold">premium</b> inclusos
+              Todos módulos <b className="font-bold">básicos</b> e{' '}
+              <b className="font-bold">premium</b> inclusos
             </span>
           </div>
           <div className="flex flex-row gap-3 items-center">
@@ -113,7 +115,7 @@ export function PlanoOuro() {
             color="primary"
             onClick={() =>
               gtag_report_conversion(
-                `/whatsapp?${encodeURIComponent(`plano=${title}&duracao=${selected.title}&preco=${selected.price}`)}`
+                `/whatsapp?${encodeURIComponent(`plano=${title}&duracao=${selected.title}&preco=${selected.price}`)}`,
               )
             }
           >

@@ -69,9 +69,7 @@ export function PlanoPrata() {
           </SelectContent>
         </Select>
         <div className="flex flex-col gap-1">
-          <span className="text-muted-foreground text-medium">
-            Somente por
-          </span>
+          <span className="text-muted-foreground text-medium">Somente por</span>
           <div className="flex flex-row items-center gap-2">
             <p className="font-semibold text-2xl flex flex-row items-center gap-2">
               {selected.price.toLocaleString('pt-BR', {
@@ -88,7 +86,8 @@ export function PlanoPrata() {
               <CheckCircle size={20} className="text-primary" />
             </div>
             <span className="font-light">
-              <b className="font-bold">{consultas}</b> consultas por dia por módulo
+              <b className="font-bold">{consultas}</b> consultas por dia por
+              módulo
             </span>
           </div>
           <div className="flex flex-row gap-3 items-center">
@@ -114,7 +113,7 @@ export function PlanoPrata() {
             color="primary"
             onClick={() =>
               gtag_report_conversion(
-                `/whatsapp?${encodeURIComponent(`plano=${title}&duracao=${selected.title}&preco=${selected.price}`)}`
+                `/whatsapp?${encodeURIComponent(`plano=${title}&duracao=${selected.title}&preco=${selected.price}`)}`,
               )
             }
           >
