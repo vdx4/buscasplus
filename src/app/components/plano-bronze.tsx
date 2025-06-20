@@ -40,9 +40,7 @@ export function PlanoBronze() {
           </div>
         </div>
         <div className="flex flex-col gap-1">
-          <span className="text-muted-foreground text-medium">
-            Somente por
-          </span>
+          <span className="text-muted-foreground text-medium">Somente por</span>
           <div className="flex flex-row items-center gap-2">
             <p className="font-bold text-2xl">
               {selected.price.toLocaleString('pt-BR', {
@@ -76,7 +74,9 @@ export function PlanoBronze() {
           </div>
         </div>
         <Link
-          href={`/whatsapp?${encodeURIComponent(`plano=${title}&duracao=${selected.title}&preco=${selected.price}`)}`}
+          href={`/whatsapp?${encodeURIComponent(
+            `plano=${title}&duracao=${selected.title}&preco=${selected.price}`
+          )}`}
         >
           <Button
             className="text-foreground"
@@ -85,7 +85,9 @@ export function PlanoBronze() {
             color="primary"
             onClick={() =>
               gtag_report_conversion(
-                `/whatsapp?${encodeURIComponent(`plano=${title}&duracao=${selected.title}&preco=${selected.price}`)}`
+                `/whatsapp?${encodeURIComponent(
+                  `plano=${title}&duracao=${selected.title}&preco=${selected.price}`
+                )}`
               )
             }
           >
