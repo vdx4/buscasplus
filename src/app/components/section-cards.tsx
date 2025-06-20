@@ -46,7 +46,7 @@ export default function SectionCards() {
         return (
           <ShineBorder
             key={index}
-            color={['#3b82f6', '#759ad5']}
+            color={['#FE620E', '#FFB566']}
             className="w-full max-w-[49%] max-sm:max-w-full relative p-8 bg-gradient-to-b from-black/50 to-transparent border-1 border-white/[0.20] text-white rounded-lg"
           >
             <div className="absolute inset-0 bg-dots opacity-10 pointer-events-none"></div>
@@ -57,7 +57,7 @@ export default function SectionCards() {
 
               <ShineBorder
                 className="min-h-0 min-w-0 p-0 my-2 relative flex h-[1px] w-full rounded-lg border"
-                color={['#3b82f6', '#759ad5']}
+                color={['#FE620E', '#FFB566']}
               >
                 <></>
               </ShineBorder>

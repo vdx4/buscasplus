@@ -86,7 +86,7 @@ export function ModulosEnglobados() {
           style={{
             height: `${scrollProgress * 100}%`, // A altura da barra segue o progresso do scroll
             opacity: scrollProgress > 0 ? 1 : 0, // Fade in quando começa o scroll
-            background: `linear-gradient(to top, rgba(29, 78, 216, 0.6) ${
+            background: `linear-gradient(to top, rgba(254, 98, 14, 0.6) ${
               scrollProgress * 100
             }%, rgba(29, 78, 216, 0) 100%)`, // Gradiente suave
             transition: 'height 0.3s ease-out', // Suaviza a transição da altura

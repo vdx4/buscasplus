@@ -8,7 +8,7 @@ export default function Logo({ className }: { className?: ClassNameValue }) {
   return (
     <Link className={cn(className, 'mx-auto')} href="/">
       <Image
-        src={'/images/logo-infobuscas2.png'}
+        src={'/images/logo.png'}
         width={150}
         height={150}
         alt="Logo InfoBuscas"
