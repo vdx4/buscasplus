@@ -154,7 +154,7 @@ const ReviewCard = ({
       </div>
 
       {/* Corpo da avaliação */}
-            <blockquote
+      <blockquote
         className="mt-2 text-sm"
         style={{
           whiteSpace: 'pre-line',
