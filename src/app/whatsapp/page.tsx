@@ -9,8 +9,13 @@ type Props = {
   };
 };
 
-export default async function WhatsappIndex({ searchParams }: Props) {
-  const { plano, duracao, preco } = await searchParams;
+export default function WhatsappIndex({ searchParams }: Props) {
+  const { plano, duracao, preco } = searchParams;
+
+  // Opcional: trate parâmetros ausentes
+  if (!plano || !duracao || !preco) {
+    redirect('/erro'); // Ou mostre uma mensagem de erro
+  }
 
   redirect(
     gerarLinkWhatsapp(
