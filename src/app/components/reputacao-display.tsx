@@ -134,28 +134,40 @@ const ReviewCard = ({
       className={cn(
         'relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4',
         'border-border bg-card hover:bg-card/[.05]',
+        // Responsividade para mobile
+        'sm:w-64 w-72'
       )}
     >
-      {/* Informações do usuário */}
-      <div className="flex flex-row items-center gap-2">
-        <Image
-          className="rounded-full"
-          width="32"
-          height="32"
-          alt=""
-          src={img}
-        />
-        <div className="flex flex-col">
-          <figcaption className="text-sm font-medium dark:text-white">
-            {name}
-          </figcaption>
-          <p className="text-xs font-medium dark:text-white/40">{username}</p>
+      {/* Header com foto, nome e avaliação */}
+      <div className="flex flex-row items-center justify-between">
+        {/* Foto e nome */}
+        <div className="flex flex-row items-center gap-2 min-w-0 flex-1">
+          <Image
+            className="rounded-full flex-shrink-0"
+            width="32"
+            height="32"
+            alt=""
+            src={img}
+          />
+          <div className="flex flex-col min-w-0">
+            <figcaption className="text-sm font-medium dark:text-white truncate">
+              {name}
+            </figcaption>
+          </div>
+        </div>
+
+        {/* Estrela com avaliação */}
+        <div className="flex items-center gap-1 flex-shrink-0">
+          <span className="text-yellow-400">⭐</span>
+          <span className="text-xs text-muted-foreground whitespace-nowrap">
+            {stars}/{maxStars}
+          </span>
         </div>
       </div>
 
       {/* Corpo da avaliação */}
       <blockquote
-        className="mt-2 text-sm"
+        className="mt-3 text-sm leading-relaxed"
         style={{
           whiteSpace: 'pre-line',
           overflowWrap: 'break-word',
@@ -164,26 +176,10 @@ const ReviewCard = ({
       >
         {body}
       </blockquote>
-
-      {/* Estrelas - CORRIGIDO */}
-      <div className="mt-3 flex items-center gap-1">
-        <div className="flex items-center gap-0.5">
-          {Array.from({ length: maxStars }, (_, index) => (
-            <Star
-              key={index}
-              fill={index < stars ? '#fbbf24' : 'none'}
-              stroke={index < stars ? '#fbbf24' : '#9ca3af'}
-              className="h-4 w-4 flex-shrink-0"
-            />
-          ))}
-        </div>
-        <span className="ml-2 text-xs text-muted-foreground">
-          {stars}/{maxStars}
-        </span>
-      </div>
     </figure>
   );
 };
+
 
 export function ReputacaoDisplay() {
   return (
