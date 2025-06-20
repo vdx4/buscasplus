@@ -1,8 +1,9 @@
 import React from 'react';
-import { PlanosSimples } from './planos-simples';
 import { PlanoDiario } from './plano-diario';
-import { PlanosPremium } from './planos-premium';
-import { PlanosBasicos } from './planos-basicos';
+import { PlanoBronze } from './plano-bronze';
+import { PlanoPrata } from './plano-prata';
+import { PlanoOuro } from './plano-ouro';
+import { PlanoDividas } from './plano-dividas';
 
 export default function SectionPlanos() {
   return (
@@ -10,15 +11,18 @@ export default function SectionPlanos() {
       <h1 className="text-5xl font-semibold text-center">Nossos planos</h1>
       <div
         id="planos"
-        className="flex flex-col  gap-2 items-center justify-center"
+        className="flex flex-col gap-2 items-center justify-center"
       >
         <div className="flex flex-row max-sm:flex-col gap-2">
           <PlanoDiario />
-          <PlanosSimples />
+          <PlanoBronze />
         </div>
         <div className="flex flex-row max-sm:flex-col gap-2">
-          <PlanosBasicos />
-          <PlanosPremium />
+          <PlanoPrata />
+          <PlanoOuro />
+        </div>
+        <div className="flex flex-row max-sm:flex-col gap-2">
+          <PlanoDividas />
         </div>
       </div>
     </section>

@@ -13,66 +13,61 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import Link from 'next/link';
-import { useInView } from 'react-intersection-observer'; // Importando o hook
+import { useInView } from 'react-intersection-observer';
 
-export function PlanosBasicos() {
-  const { consultas, id, title } = planos.basicos;
+export function PlanoOuro() {
+  const { consultas, id, title, duracao } = planos.ouro;
   const [selected, setSelected] = useState<{
     id: number | null;
     readable_id: string;
     title: string;
     descricao: string;
     price: number;
-  }>(planos.basicos.duracao[0]);
+  }>(duracao[0]);
 
   const { ref, inView } = useInView({
-    triggerOnce: true, // O elemento será observado apenas uma vez
-    threshold: 0.2, // O elemento precisa estar 50% visível para animar
+    triggerOnce: true,
+    threshold: 0.2,
   });
 
   function handleChangeValue(value: string) {
-    const option = planos.basicos.duracao.find(
-      (plano) => plano.readable_id === value,
-    );
-
+    const option = duracao.find((plano) => plano.readable_id === value);
     if (option) setSelected(option);
   }
 
   return (
     <motion.div
-      id="basico"
-      ref={ref} // Referenciando o elemento
+      ref={ref}
       className="flex flex-row flex-wrap gap-2"
       initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }} // A animação depende da visibilidade
+      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
       exit={{ opacity: 0, y: -50 }}
       transition={{ duration: 0.6, ease: 'easeInOut' }}
     >
       <motion.div
         key={id}
+        id="ouro"
         className="bg-card rounded-xl p-4 flex flex-col gap-6 mx-auto w-full max-w-xs text-left"
         initial={{ scale: 0.9, opacity: 0 }}
-        animate={{ scale: inView ? 1 : 0.9, opacity: inView ? 1 : 0 }} // Animar quando o elemento estiver visível
+        animate={{ scale: inView ? 1 : 0.9, opacity: inView ? 1 : 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
       >
         <p className="text-center font-semibold text-lg">{title}</p>
-        <Select defaultValue={'basico7'} onValueChange={handleChangeValue}>
+        <Select defaultValue={duracao[0].readable_id} onValueChange={handleChangeValue}>
           <SelectTrigger className="w-full">
             <SelectValue placeholder="Selecione a duração" />
           </SelectTrigger>
           <SelectContent>
-            {planos.basicos.duracao.map(({ id, readable_id, title }) => {
-              return (
-                <SelectItem key={id} value={readable_id}>
-                  {title}
-                </SelectItem>
-              );
-            })}
+            {duracao.map(({ id, readable_id, title }) => (
+              <SelectItem key={id ?? readable_id} value={readable_id}>
+                {title}
+              </SelectItem>
+            ))}
           </SelectContent>
         </Select>
         <div className="flex flex-col gap-1">
           <span className="text-muted-foreground text-medium">
-            {selected.readable_id === 'basico7' ? 'A partir de' : 'Somente por'}
+            Somente por
           </span>
           <div className="flex flex-row items-center gap-2">
             <p className="font-bold text-2xl">
@@ -81,11 +76,6 @@ export function PlanosBasicos() {
                 currency: 'BRL',
               })}
             </p>
-            {selected.readable_id === 'basico_anual' && (
-              <span className="text-xs font-medium bg-red-500 p-2 rounded-xl w-fit">
-                -12%
-              </span>
-            )}
           </div>
         </div>
         <div className="flex flex-col gap-2">
@@ -95,15 +85,16 @@ export function PlanosBasicos() {
               <CheckCircle size={20} className="text-primary" />
             </div>
             <span className="font-light">
-              <b className="font-bold">{consultas}</b> consultas por dia por
-              módulo
+              Maior quantidade de consultas por dia por módulo
             </span>
           </div>
           <div className="flex flex-row gap-3 items-center">
             <div>
               <Package size={20} className="text-primary" />
             </div>
-            <span className="font-light">Todos módulos básicos inclusos</span>
+            <span className="font-light">
+              Todos módulos <b className="font-bold">básicos</b> e <b className="font-bold">premium</b> inclusos
+            </span>
           </div>
           <div className="flex flex-row gap-3 items-center">
             <div>
@@ -113,7 +104,7 @@ export function PlanosBasicos() {
           </div>
         </div>
         <Link
-          href={`/whatsapp?${encodeURIComponent(`plano=Plano Básico&duracao=${selected.title}&preco=${selected.price}`)}`}
+          href={`/whatsapp?${encodeURIComponent(`plano=${title}&duracao=${selected.title}&preco=${selected.price}`)}`}
         >
           <Button
             className="text-foreground"
@@ -122,7 +113,7 @@ export function PlanosBasicos() {
             color="primary"
             onClick={() =>
               gtag_report_conversion(
-                `/whatsapp?${encodeURIComponent(`plano=Plano Básico&duracao=${selected.title}&preco=${selected.price}`)}`,
+                `/whatsapp?${encodeURIComponent(`plano=${title}&duracao=${selected.title}&preco=${selected.price}`)}`
               )
             }
           >

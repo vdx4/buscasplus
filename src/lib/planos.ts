@@ -3,101 +3,95 @@ export const planos = {
     id: 12,
     readable_id: 'diario',
     title: 'Plano Diário',
-    descricao: 'Diaria',
-    price: 49,
-    consultas: 30,
+    descricao: 'Diário',
+    price: 40,
+    consultas: null, // Não especificado
   },
 
-  simples: {
-    id: 'simples',
-    title: 'Plano Simples',
-    consultas: 50,
+  bronze: {
+    id: 'bronze',
+    title: 'Plano Bronze',
+    consultas: 30, // 30 consultas por dia em cada módulo
     duracao: [
       {
-        id: 13,
-        readable_id: 'simples',
-        title: '30 dias',
-        descricao: 'Simples | Mensal',
-        price: 159,
-      },
-      {
         id: null,
-        readable_id: 'simples_anual',
-        title: '365 dias',
-        descricao: 'Simples | Anual',
-        price: 1679,
+        readable_id: 'bronze30',
+        title: '30 dias',
+        descricao: 'Bronze | 30 Dias',
+        price: 120,
       },
     ],
   },
 
-  basicos: {
-    id: 'basico',
-    title: 'Plano Básico',
-    consultas: 100,
+  prata: {
+    id: 'prata',
+    title: 'Planos Prata',
+    consultas: 100, // 100 consultas por dia em cada módulo
     duracao: [
       {
-        id: 2,
-        readable_id: 'basico7',
+        id: null,
+        readable_id: 'prata7',
         title: '7 dias',
-        descricao: 'Básico | Semanal',
-        price: 99,
-      },
-      {
-        id: 1,
-        readable_id: 'basico15',
-        title: '15 dias',
-        descricao: 'Básico | Quinzenal',
-        price: 149,
-      },
-      {
-        id: 3,
-        readable_id: 'basico30',
-        title: '30 dias',
-        descricao: 'Básico | Mensal',
-        price: 249,
+        descricao: 'Prata | 7 Dias',
+        price: 80,
       },
       {
         id: null,
-        readable_id: 'basico_anual',
-        title: '365 dias',
-        descricao: 'Básico | Anual',
-        price: 2639,
+        readable_id: 'prata15',
+        title: '15 dias',
+        descricao: 'Prata | 15 Dias',
+        price: 120,
+      },
+      {
+        id: null,
+        readable_id: 'prata30',
+        title: '30 dias',
+        descricao: 'Prata | 30 Dias',
+        price: 200,
       },
     ],
   },
 
-  premium: {
-    id: 'premium',
-    title: 'Plano Premium',
-    consultas: 200,
+  ouro: {
+    id: 'ouro',
+    title: 'Planos Ouro',
+    consultas: null, // Maior quantidade de consultas, valor não especificado
     duracao: [
       {
-        id: 4,
-        readable_id: 'premium7',
+        id: null,
+        readable_id: 'ouro7',
         title: '7 dias',
-        descricao: 'PRO | Semanal',
-        price: 169,
-      },
-      {
-        id: 5,
-        readable_id: 'premium15',
-        title: '15 dias',
-        descricao: 'PRO | Quinzenal',
-        price: 269,
-      },
-      {
-        id: 6,
-        readable_id: 'premium30',
-        title: '30 dias',
-        descricao: 'PRO | Mensal',
-        price: 369,
+        descricao: 'Ouro | 7 Dias',
+        price: 120,
       },
       {
         id: null,
-        readable_id: 'premium_anual',
-        title: '365 dias',
-        descricao: 'PRO | Anual',
-        price: 3839,
+        readable_id: 'ouro15',
+        title: '15 dias',
+        descricao: 'Ouro | 15 Dias',
+        price: 200,
+      },
+      {
+        id: null,
+        readable_id: 'ouro30',
+        title: '30 dias',
+        descricao: 'Ouro | 30 Dias',
+        price: 300,
+      },
+    ],
+  },
+
+  dividas: {
+    id: 'dividas',
+    title: 'Planos Dívidas',
+    consultas: 1500, // 1500 consultas mensal
+    duracao: [
+      {
+        id: null,
+        readable_id: 'dividas30',
+        title: '30 dias',
+        descricao: 'Dívidas | 30 Dias',
+        price: 350,
       },
     ],
   },
