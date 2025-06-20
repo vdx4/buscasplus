@@ -66,10 +66,7 @@ export function PlanoDiario() {
               <CheckCircle size={20} className="text-primary" />
             </div>
             <span className="font-light">
-              <b className="font-bold">
-                {consultas !== null ? consultas : 'Quantidade não especificada'}
-              </b>{' '}
-              consultas por dia por módulo
+              <b className="font-bold">{consultas}</b> consultas mensais
             </span>
           </div>
           <div className="flex flex-row gap-3 items-center">

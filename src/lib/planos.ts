@@ -5,7 +5,7 @@ export const planos = {
     title: 'Plano Diário',
     descricao: 'Diário',
     price: 40,
-    consultas: null, // Não especificado
+    consultas: 30,
   },
 
   bronze: {

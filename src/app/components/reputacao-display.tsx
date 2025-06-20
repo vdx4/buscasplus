@@ -154,7 +154,16 @@ const ReviewCard = ({
       </div>
 
       {/* Corpo da avaliação */}
-      <blockquote className="mt-2 text-sm">{body}</blockquote>
+            <blockquote
+        className="mt-2 text-sm"
+        style={{
+          whiteSpace: 'pre-line',
+          overflowWrap: 'break-word',
+          wordBreak: 'break-word',
+        }}
+      >
+        {body}
+      </blockquote>
 
       {/* Estrelas */}
       <div className="mt-3 flex flex-row items-center gap-1">

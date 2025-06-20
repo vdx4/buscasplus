@@ -11,7 +11,7 @@ export default function Logo({ className }: { className?: ClassNameValue }) {
         src={'/images/logo.png'}
         width={150}
         height={150}
-        alt="Logo InfoBuscas"
+        alt="Logo BuscasPlus"
         className="max-sm:mx-auto"
       />
     </Link>
