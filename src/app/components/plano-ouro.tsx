@@ -106,7 +106,7 @@ export function PlanoOuro() {
           </div>
         </div>
         <Link
-          href={`/whatsapp?${encodeURIComponent(`plano=${title}&duracao=${selected.title}&preco=${selected.price}`)}`}
+          href={`/whatsapp?plano=${encodeURIComponent(title)}&duracao=${encodeURIComponent(selected.title)}&preco=${encodeURIComponent(selected.price)}`}
         >
           <Button
             className="text-foreground"
@@ -115,7 +115,7 @@ export function PlanoOuro() {
             color="primary"
             onClick={() =>
               gtag_report_conversion(
-                `/whatsapp?${encodeURIComponent(`plano=${title}&duracao=${selected.title}&preco=${selected.price}`)}`,
+                `/whatsapp?plano=${encodeURIComponent(title)}&duracao=${encodeURIComponent(selected.title)}&preco=${encodeURIComponent(selected.price)}`,
               )
             }
           >

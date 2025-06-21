@@ -18,16 +18,16 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    template: `%s - Info Buscas`,
-    default: `Info Buscas`,
+    template: `%s - BuscasPlus`,
+    default: `BuscasPlus`,
   },
   openGraph: {
     title: {
-      template: `%s - Info Buscas`,
-      default: `Info Buscas`,
+      template: `%s - BuscasPlus`,
+      default: `BuscasPlus`,
     },
     description: `Descubra o poder da informação com o ${process.env.NEXT_PUBLIC_APP_NAME}! Oferecemos mais de 40 módulos ONLINE para consultas detalhadas sobre pessoas e empresas. Obtenha relatórios completos e confiáveis, repletos de dados relevantes para apoiar decisões estratégicas com rapidez, precisão e segurança. Seja para análise de risco, validação de informações ou insights valiosos, o ${process.env.NEXT_PUBLIC_APP_NAME} é a ferramenta certa para o seu negócio.`,
-    siteName: `Info Buscas`,
+    siteName: `BuscasPlus`,
     type: 'website',
     url: process.env.NEXT_PUBLIC_BASE_URL,
   },
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     'consultas detalhadas de empresas',
     'consulta CPF online',
     'consulta CNPJ online',
-    'info buscas empresariais',
+    'BuscasPlus empresariais',
     'plataforma de análise de dados',
     'consulta de histórico de empresas',
     'relatórios para gestão de risco',
@@ -79,7 +79,6 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon-32x32.png',
     shortcut: '/favicon-16x16.png',
-    apple: '/apple-touch-icon.png',
   },
 };
 

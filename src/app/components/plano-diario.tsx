@@ -83,7 +83,7 @@ export function PlanoDiario() {
           </div>
         </div>
         <Link
-          href={`/whatsapp?${encodeURIComponent(`plano=${title}&duracao=24 horas&preco=${price}`)}`}
+          href={`/whatsapp?plano=${encodeURIComponent(title)}&duracao=${encodeURIComponent(selected.title)}&preco=${encodeURIComponent(selected.price)}`}
         >
           <Button
             className="text-foreground"
@@ -92,7 +92,7 @@ export function PlanoDiario() {
             color="primary"
             onClick={() =>
               gtag_report_conversion(
-                `/whatsapp?${encodeURIComponent(`plano=${title}&duracao=24 horas&preco=${price}`)}`,
+                `/whatsapp?plano=${encodeURIComponent(title)}&duracao=${encodeURIComponent(selected.title)}&preco=${encodeURIComponent(selected.price)}`,
               )
             }
           >
