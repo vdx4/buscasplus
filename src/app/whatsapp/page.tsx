@@ -2,7 +2,7 @@ import { gerarLinkWhatsapp } from '@/lib/utils';
 import { redirect } from 'next/navigation';
 
 type Props = {
-  searchParams: { // Isso aqui é um objeto, não uma Promise!
+  searchParams: {
     plano?: string;
     duracao?: string;
     preco?: string;
