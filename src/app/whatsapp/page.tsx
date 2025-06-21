@@ -10,7 +10,7 @@ type Props = {
 };
 
 export default async function WhatsappIndex({ searchParams }: Props) {
-  const { plano, duracao, preco } = searchParams; // Não precisa do await!
+  const { plano, duracao, preco } = searchParams;
 
   redirect(
     gerarLinkWhatsapp(
