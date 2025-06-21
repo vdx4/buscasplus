@@ -75,9 +75,7 @@ export function PlanoBronze() {
           </div>
         </div>
         <Link
-          href={`/whatsapp?${encodeURIComponent(
-            `plano=${title}&duracao=${selected.title}&preco=${selected.price}`,
-          )}`}
+          href={`/whatsapp?plano=${encodeURIComponent(title)}&duracao=${encodeURIComponent(selected.title)}&preco=${encodeURIComponent(selected.price)}`}
         >
           <Button
             className="text-foreground"
