@@ -142,7 +142,7 @@ const ReviewCard = ({
         {/* Foto e nome */}
         <div className="flex flex-row items-center gap-2 min-w-0 flex-1">
           <Image
-            className="rounded-full flex-shrink-0"
+            className="rounded-full object-cover w-8 h-8"
             width="32"
             height="32"
             alt=""
