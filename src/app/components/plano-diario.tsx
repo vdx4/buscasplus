@@ -15,7 +15,8 @@ import Link from 'next/link';
 import { useInView } from 'react-intersection-observer';
 
 export function PlanoDiario() {
-  const { consultas, id, price, title, readable_id } = planos.diario;
+  const { consultas, id, price, title, readable_id, duracao } = planos.diario;
+  const selected = duracao[0];
 
   const { ref, inView } = useInView({
     triggerOnce: true,

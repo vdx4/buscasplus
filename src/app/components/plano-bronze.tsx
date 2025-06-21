@@ -9,7 +9,7 @@ import { useInView } from 'react-intersection-observer';
 
 export function PlanoBronze() {
   const { consultas, id, title, duracao } = planos.bronze;
-  const selected = duracao[0]; // Só existe uma opção
+  const selected = duracao[0];
 
   const { ref, inView } = useInView({
     triggerOnce: true,

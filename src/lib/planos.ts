@@ -6,6 +6,15 @@ export const planos = {
     descricao: 'Diário',
     price: 40,
     consultas: 30,
+    duracao: [
+      {
+        id: null,
+        readable_id: 'diaria',
+        title: '24 horas',
+        descricao: 'Diária | 24 Horas',
+        price: 40,
+      },
+    ],
   },
 
   bronze: {
