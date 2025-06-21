@@ -9,7 +9,7 @@ type Props = {
   };
 };
 
-export default async function WhatsappIndex({ searchParams }: Props) {
+export default function WhatsappIndex({ searchParams }: Props) {
   const { plano, duracao, preco } = searchParams;
 
   redirect(
