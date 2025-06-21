@@ -2,15 +2,15 @@ import { gerarLinkWhatsapp } from '@/lib/utils';
 import { redirect } from 'next/navigation';
 
 type Props = {
-  searchParams: {
+  searchParams: Promise<{
     plano?: string;
     duracao?: string;
     preco?: string;
-  };
+  }>;
 };
 
-export default function WhatsappIndex({ searchParams }: Props) {
-  const { plano, duracao, preco } = searchParams;
+export default async function WhatsappIndex({ searchParams }: Props) {
+  const { plano, duracao, preco } = await searchParams;
 
   redirect(
     gerarLinkWhatsapp(
